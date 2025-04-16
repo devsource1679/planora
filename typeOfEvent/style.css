@@ -1,0 +1,134 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif
+}
+
+section{
+    background-color: #106ebe;
+    max-height: fit-content;
+    /* padding: 50px; */
+}
+
+.wrapper{
+    display: flex;
+    width: 95%;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 20px; */
+
+}
+
+.inner-txt{
+    background-color: aliceblue;
+    font-size: 20px;
+    padding: 20px;
+    /* height: 80vh; */
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.inner-txt h3{
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    
+}
+
+
+h2{
+    padding: 20px;
+    text-align: center;
+}
+
+.inner-img{
+    width: 100%;
+}
+
+/* vvvvvvvvvvvvvvvvvv */
+
+.containe {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+    max-width: 600px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+.circle {
+    border-radius: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    
+}
+button{
+    padding: 20px;
+}
+.circle {
+    text-decoration: none;
+    color: white;
+    background-color: #106ebe;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.more a{
+    text-decoration: none;
+    color: black;
+}
+
+.containe .circle :hover{
+    background-color: rgba(255, 0, 0, 0.221);
+}
+
+@media (max-width: 570px) {
+    .containe {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 300px) {
+    .containe {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+nav .header{
+    background-color: #106ebe;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.header a{
+    text-decoration: none;
+    color: white;
+}
+
+nav .header{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.fa-home{
+    font-size: 20px;
+}
+
+.btn-primary{
+    background-color: #106ebe;
+}
+
+.btn-login{
+    padding: 5px;
+}

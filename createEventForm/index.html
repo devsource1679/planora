@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <nav>
+        <div class="header">
+          <div><a href="../index.html">Planora</a></div>
+          <div class="fa-home"><a href="../index.html"><i class='bx bx-home-alt-2'></i></a></i></div>
+        </div>
+    </nav>
+
+
+    <h2 class="reg">Event Registration</h2>
+    <div class="container">
+        <div>
+
+            <form id="registrationForm" class="form-wrap">
+                <div class="form-group">
+                        <label for="name"></label>
+                    <input type="text" id="name" required placeholder="Full Name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email"></label>
+                    <input type="email" id="email" required placeholder="Email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone"></label>
+                    <input type="tel" id="phone" required placeholder="Phone Number">
+                </div>
+
+                <div class="form-group">
+                    <label for="eventType"></label>
+                    <input type="tel" id="eventType" required placeholder="Event Type">
+                </div>
+                
+                <div class="division">
+                    <div class="date">
+                        <label for="eventDate"></label>
+                        <input type="date" id="eventDate" required>
+                    </div>
+                    
+                    <div class="date">
+                        <label for="eventTime"></label>
+                        <input type="time" id="eventTime" required>
+                    </div>
+                </div>
+                
+                <p class="register"><button type="submit">Register</button></p>
+            </form>
+
+        </div>
+
+        <div>
+            <h2 class="track">Track Your Registration</h2>
+
+            <div class="email-track">
+                <input type="email" id="trackEmail" placeholder="Enter your email to track" required>
+            </div>
+
+            <div class="trackBtn">
+                <button onclick="trackRegistration()">Track</button>
+            </div>
+            <p id="trackingResult"></p>
+        </div>
+    </div>
+
+    <div class="spinner-container" id="spinner">
+        <div class="spinner"></div>
+    </div> 
+  
+    
+    <script  type="module" src="./script.js"></script>
+</body>
+</html>

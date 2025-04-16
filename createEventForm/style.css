@@ -1,0 +1,145 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.container{
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   margin: auto;
+   width: 95%;
+   
+}
+
+input{
+    width: 100%;
+    padding: 10px;
+}
+
+
+form{
+    padding: 20px 10px;
+}
+
+.form-group{
+    padding: 10px;
+}
+
+.form-group input{
+    width: 100%;
+}
+.date{
+    padding: 10px;
+}
+.date input{
+    padding: 10px;
+    width: 100%;
+}
+
+
+.register{
+    padding: 10px;
+ 
+}
+
+.register button{
+    width: 70%;
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #106ebe ;
+    color: white;
+    font-family: sans-serif;
+}
+
+.division{
+    display: flex;
+    align-items: center;
+}
+.reg{
+    padding: 10px;
+    text-align: center;
+}
+
+.track{
+    padding: 10px;
+}
+
+.email-track{
+    padding: 10px;
+}
+
+.email-track input{
+    width: 100%;
+}
+
+.track-btn{
+    padding: 10px;
+}
+
+.track-btn button{
+    padding: 10px 20px;
+    background-color: #106ebe;
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+
+.spinner-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+.spinner {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+nav .header{
+    background-color: #106ebe;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header a{
+    text-decoration: none;
+    color: white;
+}
+
+nav .header{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.fa-home{
+    font-size: 20px;
+}
+
+.btn-primary{
+    background-color: #106ebe;
+}
+
+.btn-login{
+    padding: 5px;
+}

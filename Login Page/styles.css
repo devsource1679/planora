@@ -1,0 +1,32 @@
+
+nav .header{
+    background-color: #106ebe;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header a{
+    text-decoration: none;
+    color: white;
+}
+
+nav .header{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.fa-home{
+    font-size: 20px;
+}
+
+.btn-primary{
+    background-color: #106ebe;
+}
+
+.btn-login{
+    padding: 5px;
+}

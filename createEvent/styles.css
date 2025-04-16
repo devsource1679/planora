@@ -1,0 +1,270 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+nav{
+    border: thin solid rgba(0, 0, 0, 0.155); 
+    position: sticky;
+    z-index: 2;
+    top: 0; 
+    background-color: #106ebe;
+  }
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav .header{
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    padding: 20px 0px;
+  
+    /* height: 80px; */
+}
+  
+.header-list ul{
+    display: flex;
+    align-items: center;
+    gap: 30px ;
+    list-style-type: none;
+}
+  
+.header-list ul li a{
+    text-decoration: none;
+    color: white;
+}
+  
+.header-list ul li  :hover{
+    background-color: rgba(255, 89, 0, 0.112);
+    border-radius: 15px;
+    transition: 0.10s ;
+}
+
+
+.search-icon input{
+    border: 1px solid black;
+    height: 30px;
+    /* width: 100%; */
+    padding: 0px 10px 0px ;
+    border-radius: 10px;
+}
+  
+.menu-bar{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    padding: none;
+    display: none;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+.icon a{
+    text-decoration: none;
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: 900;
+    color: #0ffcbe;
+}
+  
+.icon{
+    background: url(../image/planora\ logo.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+}
+.fa-angle-down{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0px 2px;
+    font-size: 12px;
+}
+
+  
+.icon-container{
+    display: flex;
+    align-items: center;
+}
+
+.second-icon{
+    background: url(../image/planora\ logo.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    display: none;
+}
+  
+  /* media quary for header */
+  @media(max-width:1010px){
+      .logo{
+        gap: none;
+    }
+}
+  
+  @media(max-width:1000px){
+    .icon{
+       display: none;
+    }
+    .second-icon{
+      display: block;
+    }
+}
+  
+@media(max-width:826px){
+    .hide{
+        display: none;
+    }
+    .menu-bar{
+        display: block;
+        width: 5%;
+        padding: 0px;
+        gap: 0px;
+  
+    }
+}
+  
+  
+@media(max-width:652px){
+    .help-c{
+    display: none;
+    }
+}
+
+
+/* section two */
+
+.section-two{
+    background-color: #0ffcbe;
+    /* width: 100%; */
+}
+
+
+.wrapper{
+    width: 95%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: -1;
+}
+
+.sec-two1 ul{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 0px;
+}
+
+.sec-two2 ul{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.sec-two1 ul li a{
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+}
+
+.sec-two1 ul li{
+    list-style: none;
+}
+
+.user-bx{
+    font-size: 20px;
+}
+
+/* media quaryyyyy................ */
+
+@media(max-width:520px){
+    .sec-two1{
+        display: none;
+    }
+}
+
+/* .container{
+    display: flex;
+    width: 95%;
+    align-items: center;
+    margin: auto;
+} */
+
+.inner-container{
+    margin: 60px auto;
+}
+
+.inner-txt{
+    font-size: 30px;
+    /* padding: 20px; */
+    font-family: sans-serif;
+    font-weight: 900;
+    text-align: center;
+    color: black;
+}
+
+.inner-txt2{
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+.card:hover {
+    transform: scale(1.05);
+}
+.card img {
+    width: 90%;
+    height: auto;
+    padding: 20px 20px;
+    border-radius: 50px;
+}
+.card-content {
+    padding: 15px;
+    text-align: center;
+}
+.card-content h3 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+.card-content p {
+    color: #555;
+    font-size: 1rem;
+}
+
+.card h3{
+    padding: 10px;
+}
+
+.card a{
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    margin: 10px;
+    /* border: 2px solid #0ffcbe; */
+    border-radius: 10px;
+    background-color: #106ebe;
+}
