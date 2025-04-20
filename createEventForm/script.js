@@ -70,25 +70,29 @@ document.getElementById("registrationForm").addEventListener("submit", async fun
   }
 });
 
-// Track registration from Firestore
-async function trackRegistration() {
-  const email = document.getElementById("trackEmail").value.trim();
-  if (!email) {
-    // alert("Please enter your email to track your registration.");
-    return;
-  }
 
-  const q = query(colRef, where("email", "==", email));
-  const querySnapshot = await getDocs(q);
 
-  if (!querySnapshot.empty) {
-    const data = querySnapshot.docs[0].data();
-    document.getElementById("trackingResult").innerText = 
-      `Registered Name: ${data.name}, Phone: ${data.phone}, Event Date: ${data.eventDate}, Event Time: ${data.eventTime}`;
-  } else {
-    document.getElementById("trackingResult").innerText = "No registration found for this email.";
-  }
-}
 
-// Hook track function to button if needed
-document.addEventListener("click", trackRegistration);
+
+// // Track registration from Firestore
+// async function trackRegistration() {
+//   const email = document.getElementById("trackEmail").value.trim();
+//   if (!email) {
+//     // alert("Please enter your email to track your registration.");
+//     return;
+//   }
+
+//   const q = query(colRef, where("email", "==", email));
+//   const querySnapshot = await getDocs(q);
+
+//   if (!querySnapshot.empty) {
+//     const data = querySnapshot.docs[0].data();
+//     document.getElementById("trackingResult").innerText = 
+//       `Registered Name: ${data.name}, Phone: ${data.phone}, Event Date: ${data.eventDate}, Event Time: ${data.eventTime}`;
+//   } else {
+//     document.getElementById("trackingResult").innerText = "No registration found for this email.";
+//   }
+// }
+
+
+// document.addEventListener("click", trackRegistration);

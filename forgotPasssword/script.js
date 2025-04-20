@@ -1,19 +1,19 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-import { getAuth,sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-app.js";
+ import { getAuth,sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-auth.js";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAzAgywPLaEHtnSOzocjKuVFPetlkLCZq8",
-    authDomain: "instablog-b09e0.firebaseapp.com",
-    projectId: "instablog-b09e0",
-    storageBucket: "instablog-b09e0.firebasestorage.app",
-    messagingSenderId: "74456260023",
-    appId: "1:74456260023:web:4863b97a085c0396639c32"
+    apiKey: "AIzaSyD3p6BY8H74GrfoHWt0jfUZrhzoBdTYEB4",
+    authDomain: "planora-67d43.firebaseapp.com",
+    projectId: "planora-67d43",
+    storageBucket: "planora-67d43.firebasestorage.app",
+    messagingSenderId: "224654990289",
+    appId: "1:224654990289:web:3c26e564611251ece09ef0"
 };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 // Initialize Auth

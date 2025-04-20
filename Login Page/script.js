@@ -3,7 +3,7 @@
   import { getAuth,  signInWithEmailAndPassword,onAuthStateChanged ,signOut } from "https://www.gstatic.com/firebasejs/11.3.0/firebase-auth.js";
   ;
 
-  const firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyD3p6BY8H74GrfoHWt0jfUZrhzoBdTYEB4",
     authDomain: "planora-67d43.firebaseapp.com",
     projectId: "planora-67d43",
@@ -21,17 +21,17 @@ const auth = getAuth();
 signInForm.addEventListener("submit", signInUser);
 
 
-signOutBtn.addEventListener("click", signOutUser);
+// signOutBtn.addEventListener("click", signOutUser);
 
 
-async function signOutUser() {
-    try {
-        await signOut(auth);  
-        alert("Sign out successful"); 
-    } catch (error) {
-        console.log(error); 
-    }
-}
+// async function signOutUser() {
+//     try {
+//         await signOut(auth);  
+//         alert("Sign out successful"); 
+//     } catch (error) {
+//         console.log(error); 
+//     }
+// }
 
 
 async function signInUser(e) {
@@ -45,6 +45,10 @@ async function signInUser(e) {
         }
         await signInWithEmailAndPassword(auth, user.email, user.password); 
         alert("Sign In successful"); 
+
+        setTimeout(() => {
+            window.location.href = `../dashboard`;
+        }, 1000);
     } catch (error) {
         
         console.log(error.message);
@@ -55,6 +59,8 @@ async function signInUser(e) {
             errorP.textContent = "Invalid email/password.";
         }
     }
+
+   
 }
 
 

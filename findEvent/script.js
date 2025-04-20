@@ -15,6 +15,10 @@ const firebaseConfig = {
     appId: "1:224654990289:web:3c26e564611251ece09ef0"
 };
 
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const colRef = collection(db, "usersData");
+
 async function trackRegistration() {
     const email = document.getElementById("trackEmail").value.trim();
     if (!email) {
