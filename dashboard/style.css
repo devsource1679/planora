@@ -162,13 +162,20 @@ nav .header{
 }
   
 .icon{
-    background: url(../image/planora\ logo.webp);
+    background: url(../image/new\ planora\ img.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 50px;
     width: 50px;
+    border-radius: 50%;
+    font-weight:900;
+    font-size: large;
     cursor: pointer;
+    align-items: center;
+
+   
 }
+
 
 
 .hide{
@@ -184,7 +191,7 @@ nav .header{
 }
 
 .second-icon{
-    background: url(../image/planora\ logo.webp);
+    background: url(../image/new\ planora\ img.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 50px;
@@ -227,7 +234,7 @@ nav .header{
     padding: 20px  !important;
     border-radius: 10px;
     /* border: 2px solid blue; */
-}
+} 
 .user-bx{
     font-size: 20px;
     font-family: sans-serif;
@@ -327,7 +334,7 @@ nav .header{
   
   
 .hero-img{
-    background-image: url(../image/gathering\ 1.jpg); 
+    background-image: url(../image/gathering\ 1\ -\ Copy.jpg); 
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

@@ -2,7 +2,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: sans-serif
+    font-family: sans-serif;
+    cursor: pointer;
 }
 
 section{
@@ -92,11 +93,13 @@ button{
 @media (max-width: 570px) {
     .containe {
         grid-template-columns: repeat(2, 1fr);
+        cursor: pointer;
     }
 }
 @media (max-width: 300px) {
     .containe {
         grid-template-columns: repeat(1, 1fr);
+        cursor: pointer;
     }
 }
 

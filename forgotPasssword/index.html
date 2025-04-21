@@ -9,37 +9,45 @@
 </head>
 <body>
 
-<!-- Forgot Password Container -->
-<div class="container my-5">
-    <div class="row justify-content-center">
-        <!-- Forgot Password Card -->
-        <div class="col-md-6 col-lg-4">
-            <div class="card shadow-sm">
-                <div class="card-header text-center bg-primary text-white">
-                    <h4>Forgot Password</h4>
-                </div>
-                <div class="card-body">
-                    <p class="text-center mb-4">Enter your email address below to reset your password.</p>
-                    <!-- Forgot Password Form -->
-                    <form id="forgotForm">
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email Address</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Send Reset Link</button>
-                    </form>
-                </div>
-                <div class="card-footer text-center">
-                    <p>Remember your password? <a href="../Login Page/">Login</a></p>
+
+    <nav>
+        <div class="header">
+          <div><a href="../index.html">Planora</a></div>
+          <div class="fa-home"><a href="../index.html"><i class='bx bx-home-alt-2'></i></a></i></div>
+        </div>
+    </nav>
+
+  <!-- Forgot Password Container -->
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <!-- Forgot Password Card -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow-sm">
+                    <div class="card-header text-center bg-primary text-white">
+                        <h4 class="col">Forgot Password</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-center mb-4">Enter your email address below to reset your password.</p>
+                        <!-- Forgot Password Form -->
+                        <form id="forgotForm">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100" >Send Reset Link</button>
+                        </form>
+                    </div>
+                    <div class="card-footer text-center">
+                        <p>Remember your password? <a href="../Login Page/">Login</a></p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 
-<script type="module" src="./script.js"></script>
-<!-- Bootstrap 5 JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./script.js"></script>
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

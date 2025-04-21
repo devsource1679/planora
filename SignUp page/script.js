@@ -1,7 +1,7 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
 import { getFirestore,collection,setDoc,doc } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyD3p6BY8H74GrfoHWt0jfUZrhzoBdTYEB4",
@@ -23,58 +23,166 @@ const db = getFirestore(app);
 const colRef = collection(db, "usersData")
 
 
-const createUserAccount = async (e) => {
-    e.preventDefault(); 
-    const { name, email, password, confirmPassword } = signUpForm; 
-    const spinner = document.getElementById("spinner");
+
+// const createUserAccount = async (e) => {
+//     e.preventDefault(); 
+//     const { name, email, password, confirmPassword } = signUpForm; 
+//     const spinner = document.getElementById("spinner");
 
   
-    let userDetails = {
-        name: name.value,          
-        email: email.value,         
-        password: password.value,   
-    }
+//     let userDetails = {
+//         name: name.value,          
+//         email: email.value,         
+//         password: password.value,   
+//     }
    
-    try {
+//     try {
 
-        spinner.style.visibility = 'visible';
+//         spinner.style.visibility = 'visible';
 
-        if (userDetails.password !== confirmPassword.value) { 
-            throw new Error("Ensure password matches");
-        }
-        const userCred = await createUserWithEmailAndPassword(auth, userDetails.email, userDetails.password)
-        const docRef = doc(colRef, userCred.user.uid);
-        const docSnap = await setDoc(docRef, {
-            name: userDetails.name,
-            email: userDetails.email,
-        });
+//         if (userDetails.password !== confirmPassword.value) { 
+//             throw new Error("Ensure password matches");
+//         }
+//         const userCred = await createUserWithEmailAndPassword(auth, userDetails.email, userDetails.password)
+//         const docRef = doc(colRef, userCred.user.uid);
+//         const docSnap = await setDoc(docRef, {
+//             name: userDetails.name,
+//             email: userDetails.email,
+//         });
        
 
-    } catch (error) {
-        console.log(error.message);
+//     } catch (error) {
+//         console.log(error.message);
 
-        if (error.message === "Firebase: Password should be at least 6 characters (auth/weak-password).") {
+//         if (error.message === "Firebase: Password should be at least 6 characters (auth/weak-password).") {
            
-            errorP.textContent = "*Password should be at least 6 characters";
-        }
-        if (error.message === "Firebase: Error (auth/email-already-in-use).") {
+//             errorP.textContent = "*Password should be at least 6 characters";
+//         }
+//         if (error.message === "Firebase: Error (auth/email-already-in-use).") {
           
-            errorP.textContent = "Email already exists.";
-        }
-        if (error.message === 'Ensure password matches') {
+//             errorP.textContent = "Email already exists.";
+//         }
+//         if (error.message === 'Ensure password matches') {
          
-            errorP.textContent = "Ensure password matches";
-        }
-    }   finally {
-        spinner.style.visibility = 'hidden';
-    }
+//             errorP.textContent = "Ensure password matches";
+//         }
+//     }   finally {
+//         spinner.style.visibility = 'hidden';
+//     }
 
-    alert("Sign Up successful"); 
+//     alert("Sign Up successful"); 
 
-    setTimeout(() => {
-        window.location.href = `../dashboard`;
-    }, 1000);
-}
+//     setTimeout(() => {
+//         window.location.href = `../dashboard`;
+//     }, 1000);
+// }
+
+// signUpForm.addEventListener("submit", createUserAccount);
 
 signUpForm.addEventListener("submit", createUserAccount);
+
+function getUserDetails() {
+    // e.preventDefault(
+    const { email, password, name, confirmPassword } = signUpForm;
+    const spinner = document.getElementById("spinner");
+    
+    const userDetails = {
+        email: email.value.trim(),
+        name: name.value.trim(),
+        password: password.value,
+        confirmPassword: confirmPassword.value
+    }
+    return userDetails
+
+}
+
+async function createUserAccount(e) {
+    e.preventDefault();
+    const { email, name, password, confirmPassword } = getUserDetails();
+    errorP.textContent = '';
+    spinner.style.visibility = 'visible';
+    try {
+        let emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+        if (!emailRegex.test(email)) {
+            throw new Error("Invalid email address.")
+        }
+        if (password !== confirmPassword) {
+            throw new Error("Password does not match")
+        }
+        const res = await createUserWithEmailAndPassword(auth, email, password);
+        await sendEmailVerification(res.user);
+        const docRef = doc(colRef, res.user.uid);
+        await setDoc(docRef, {
+            email,
+            fullName: name
+        })
+
+        // await auth.signOut();
+
+        alert("A verification email has been sent. Please verify your email to activate your account.") 
+
+
+        if (!user.emailVerified) {
+            alert("Please verify your email before continuing.");
+            await auth.signOut();
+            // return;
+        } else{
+            alert("Login successful!");
+            window.location.href = "../dashboard";
+        }
+    } catch (error) {
+        console.log(error);
+
+        if (error.message === "Password does not match") {
+            errorP.textContent = "*Password does not match"
+        }
+        if (error.message === "Invalid email address.") {
+            errorP.textContent = "*Enter a valid email address"
+        }
+
+    }  finally {
+                spinner.style.visibility = 'hidden';
+        }
+
+
+        
+        // const res = await signInWithEmailAndPassword(auth, email, password);
+        // const user = res.user;
+
+        //     if (!user.emailVerified) {
+        //         alert("Please verify your email before continuing.");
+        //         await auth.signOut();
+        //         // return;
+        //     }
+
+
+        //      const docRef = doc(colRef, user.uid);
+        //     await setDoc(docRef, {
+        //         email: user.email,
+        //         fullName: name // You might want to save this in sessionStorage during signup
+        //     }, { merge: true });
+        
+        //     alert("Login successful!");
+        //     window.location.href = "../dashboard";
+        
+        //     alert("Sign Up successful"); 
+
+}
+
+// const res = await signInWithEmailAndPassword(auth, email, password);
+// const user = res.user;
+
+//     if (!user.emailVerified) {
+//         alert("Please verify your email before continuing.");
+//         await auth.signOut();
+//         // return;
+//     }
+
+// // ✅ Now user is verified, save in Firestore if not already
+// const docRef = doc(colRef, user.uid);
+// await setDoc(docRef, {
+//     email: user.email,
+//     fullName: name // You might want to save this in sessionStorage during signup
+// }, { merge: true });
+
 

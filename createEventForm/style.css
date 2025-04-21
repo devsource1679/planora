@@ -4,38 +4,30 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
+.reg{
+    padding: 10px;
+    text-align: center;
+}
+
 .container{
-   display: flex;
-   align-items: center;
-   flex-direction: column;
-   margin: auto;
-   width: 95%;
-   
-}
-
-input{
-    width: 100%;
-    padding: 10px;
-}
-
-
-form{
-    padding: 20px 10px;
-}
-
-.form-group{
-    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
 }
 
 .form-group input{
-    width: 100%;
+    width: 130%;
+    padding: 10px;
+    margin: 10px;
 }
+
+
 .date{
     padding: 10px;
 }
 .date input{
     padding: 10px;
-    width: 100%;
 }
 
 
@@ -45,7 +37,7 @@ form{
 }
 
 .register button{
-    width: 70%;
+    width: 50%;
     padding: 10px 10px;
     border-radius: 5px;
     border: none;
@@ -54,26 +46,6 @@ form{
     font-family: sans-serif;
 }
 
-.division{
-    display: flex;
-    align-items: center;
-}
-.reg{
-    padding: 10px;
-    text-align: center;
-}
-
-.track{
-    padding: 10px;
-}
-
-.email-track{
-    padding: 10px;
-}
-
-.email-track input{
-    width: 100%;
-}
 
 .track-btn{
     padding: 10px;

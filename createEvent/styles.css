@@ -2,6 +2,7 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 nav{
@@ -73,7 +74,7 @@ nav .header{
 }
   
 .icon{
-    background: url(../image/planora\ logo.webp);
+    background: url(../image/new\ planora\ img.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 50px;
@@ -95,7 +96,7 @@ nav .header{
 }
 
 .second-icon{
-    background: url(../image/planora\ logo.webp);
+    background: url(../image/new\ planora\ img.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 50px;
@@ -216,6 +217,10 @@ nav .header{
 .inner-txt2{
     text-align: center;
     font-family: sans-serif;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+    font-size: 18px;
 }
 
 .container {
@@ -223,6 +228,8 @@ nav .header{
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    padding: 20px;
+    cursor: pointer;
 }
 .card {
     background: white;
@@ -263,7 +270,7 @@ nav .header{
     color: white;
     padding: 10px;
     font-size: 18px;
-    margin: 10px;
+    margin: 20px;
     /* border: 2px solid #0ffcbe; */
     border-radius: 10px;
     background-color: #106ebe;

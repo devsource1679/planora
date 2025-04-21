@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-   
-    <h2 class="track">Track Your Registration</h2>
 
-    <div class="email-track">
-        <input type="email" id="trackEmail" placeholder="Enter your email to track" required>
-    </div>
-
-    <div class="trackBtn">
-        <button onclick="trackRegistration()">Track</button>
-    </div>
-    <p id="trackingResult"></p>
+    <div class="tracking-container">
+        <h2>Track Your Registration</h2>
+        <input type="email" id="trackEmail" placeholder="Enter your email" />
+        <button onclick="trackRegistration()">Search</button>
+      
+        <div id="trackingResult" class="tracking-result">
+          <!-- Result will appear here -->
+        </div>
+      </div>
+      
    
     <script type="module" src="../findEvent/script.js"></script>
 </body>
