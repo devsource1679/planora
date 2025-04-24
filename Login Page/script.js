@@ -35,16 +35,21 @@ signInForm.addEventListener("submit", signInUser);
 
 
 async function signInUser(e) {
-    e.preventDefault();  
+    e.preventDefault(); 
+    const spinner = document.getElementById("spinner"); 
 
     try {
         const { email, password } = signInForm; 
+        spinner.style.visibility = 'visible';
+       
         let user = {
             email: email.value,  
             password: password.value,  
         }
         await signInWithEmailAndPassword(auth, user.email, user.password); 
-        alert("Sign In successful"); 
+        alert("Sign In successful");
+        
+        spinner.style.visibility = 'hidden';
 
         setTimeout(() => {
             window.location.href = `../dashboard`;

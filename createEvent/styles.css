@@ -80,6 +80,9 @@ nav .header{
     height: 50px;
     width: 50px;
     cursor: pointer;
+    border-radius: 50%;
+    font-weight:900;
+    font-size: large;
 }
 .fa-angle-down{
     cursor: pointer;
@@ -103,6 +106,9 @@ nav .header{
     width: 50px;
     cursor: pointer;
     display: none;
+    border-radius: 50%;
+    font-weight:900;
+    font-size: large;
 }
   
   /* media quary for header */

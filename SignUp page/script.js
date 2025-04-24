@@ -110,6 +110,7 @@ async function createUserAccount(e) {
             throw new Error("Password does not match")
         }
         const res = await createUserWithEmailAndPassword(auth, email, password);
+     
         await sendEmailVerification(res.user);
         const docRef = doc(colRef, res.user.uid);
         await setDoc(docRef, {
@@ -117,19 +118,9 @@ async function createUserAccount(e) {
             fullName: name
         })
 
-        // await auth.signOut();
-
         alert("A verification email has been sent. Please verify your email to activate your account.") 
 
 
-        if (!user.emailVerified) {
-            alert("Please verify your email before continuing.");
-            await auth.signOut();
-            // return;
-        } else{
-            alert("Login successful!");
-            window.location.href = "../dashboard";
-        }
     } catch (error) {
         console.log(error);
 
@@ -144,45 +135,12 @@ async function createUserAccount(e) {
                 spinner.style.visibility = 'hidden';
         }
 
+        setTimeout(() => {
+            window.location.href = `../dashboard`;
+        }, 1000);
 
-        
-        // const res = await signInWithEmailAndPassword(auth, email, password);
-        // const user = res.user;
-
-        //     if (!user.emailVerified) {
-        //         alert("Please verify your email before continuing.");
-        //         await auth.signOut();
-        //         // return;
-        //     }
-
-
-        //      const docRef = doc(colRef, user.uid);
-        //     await setDoc(docRef, {
-        //         email: user.email,
-        //         fullName: name // You might want to save this in sessionStorage during signup
-        //     }, { merge: true });
-        
-        //     alert("Login successful!");
-        //     window.location.href = "../dashboard";
-        
-        //     alert("Sign Up successful"); 
 
 }
 
-// const res = await signInWithEmailAndPassword(auth, email, password);
-// const user = res.user;
-
-//     if (!user.emailVerified) {
-//         alert("Please verify your email before continuing.");
-//         await auth.signOut();
-//         // return;
-//     }
-
-// // ✅ Now user is verified, save in Firestore if not already
-// const docRef = doc(colRef, user.uid);
-// await setDoc(docRef, {
-//     email: user.email,
-//     fullName: name // You might want to save this in sessionStorage during signup
-// }, { merge: true });
 
 
