@@ -278,6 +278,12 @@ nav .header{
 }
 
 @media(max-width:652px){
+    .header ul{
+        display: none;
+    }
+}
+
+@media(max-width:651px){
     .hamburger{
         display: block;
         width: 30px;
@@ -292,11 +298,6 @@ nav .header{
   
 }
 
-@media(max-width:652px){
-    .header ul{
-        display: none;
-    }
-}
 
 
   
@@ -855,10 +856,7 @@ input[type="radio"]{
             background-color:#02294a ;
             font-family: sans-serif;
         }
-        hr{
-            /* border: 1px solid black; */
-        }
-        
+      
         .footer-wrapper{
             display: flex;
             align-items: center;

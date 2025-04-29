@@ -81,23 +81,25 @@ const colRef = collection(db, "usersData")
 
 signUpForm.addEventListener("submit", createUserAccount);
 
-function getUserDetails() {
-    // e.preventDefault()
-    const { email, password, name, confirmPassword } = signUpForm;
-    const spinner = document.getElementById("spinner");
-    
-    const userDetails = {
-        email: email.value.trim(),
-        name: name.value.trim(),
-        password: password.value,
-        confirmPassword: confirmPassword.value
-    }
-    return userDetails
 
-}
 
 async function createUserAccount(e) {
     e.preventDefault();
+
+    function getUserDetails() {
+        // e.preventDefault()
+        const { email, password, name, confirmPassword } = signUpForm;
+        const spinner = document.getElementById("spinner");
+        
+        const userDetails = {
+            email: email.value.trim(),
+            name: name.value.trim(),
+            password: password.value,
+            confirmPassword: confirmPassword.value
+        }
+        return userDetails
+    
+    }
     const { email, name, password, confirmPassword } = getUserDetails();
     errorP.textContent = '';
     spinner.style.visibility = 'visible';
