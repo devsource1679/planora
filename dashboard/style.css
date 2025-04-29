@@ -278,13 +278,13 @@ nav .header{
 }
 
 @media(max-width:652px){
-    .header ul{
+    .header-list ul{
         display: none;
     }
 }
 
 @media(max-width:651px){
-    .hamburger{
+    .navbar .hamburger{
         display: block;
         width: 30px;
         height: 20px;
@@ -293,6 +293,7 @@ nav .header{
         flex-direction: column;
         justify-content: space-between;
         z-index: 2;
+        border: 2px solid red;
         
     }
   
