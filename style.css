@@ -494,6 +494,8 @@ input[type="radio"]{
 
 
 
+
+
 /*  first card section,,,,,,,,,,,,,,,,,,,,,,,,,, */
 .container {
     display: grid;
@@ -872,10 +874,11 @@ input[type="radio"]{
 
 .section-footer{
     width: 100%;
-    background-color: #303030;
+    background-color:#02294a ;
+    font-family: sans-serif;
 }
 hr{
-    border: 1px solid black;
+    /* border: thin solid black; */
 }
 
 .footer-wrapper{

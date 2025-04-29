@@ -48,12 +48,12 @@ async function signInUser(e) {
         }
         await signInWithEmailAndPassword(auth, user.email, user.password); 
         alert("Sign In successful");
-        
-        spinner.style.visibility = 'hidden';
+    
 
         setTimeout(() => {
             window.location.href = `../dashboard`;
         }, 1000);
+
     } catch (error) {
         
         console.log(error.message);
@@ -63,18 +63,20 @@ async function signInUser(e) {
             
             errorP.textContent = "Invalid email/password.";
         }
+    } finally{
+        spinner.style.visibility = 'hidden';
     }
 
    
 }
 
 
-onAuthStateChanged(auth, (user) => {
-    if (user) {
+// onAuthStateChanged(auth, (user) => {
+//     if (user) {
         
-        console.log(user);
-    } else {
+//         console.log(user);
+//     } else {
        
-        console.log("No one is currently signed in.");
-    }
-});
+//         console.log("No one is currently signed in.");
+//     }
+// });

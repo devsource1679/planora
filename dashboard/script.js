@@ -54,17 +54,3 @@ overlay.addEventListener('click', () => {
 });
 
 
-// document.getElementById("myActionBtn").addEventListener("click", () => {
-//   checkUserAuthentication(() => {
-//     // Put your protected action here
-//     console.log("User is logged in. Performing protected action...");
-//     // Example: show dashboard, open modal, etc.
-//   });
-// });
-
-function navigate () {
-  window.location.href="../createEvent"
-}
-
-document.getElementById("goToPageBtn")
-

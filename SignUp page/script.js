@@ -82,7 +82,7 @@ const colRef = collection(db, "usersData")
 signUpForm.addEventListener("submit", createUserAccount);
 
 function getUserDetails() {
-    // e.preventDefault(
+    // e.preventDefault()
     const { email, password, name, confirmPassword } = signUpForm;
     const spinner = document.getElementById("spinner");
     
@@ -116,9 +116,19 @@ async function createUserAccount(e) {
         await setDoc(docRef, {
             email,
             fullName: name
-        })
+        });
 
         alert("A verification email has been sent. Please verify your email to activate your account.") 
+      
+        setTimeout(() => {
+            window.location.href = `../dashboard`;
+        }, 1000);
+
+        // if(res.user.emailVerified) {
+        //     window.location.href = `../dashboard`;
+        // } else{
+        //     alert("Please verify your email!");
+        // }
 
 
     } catch (error) {
@@ -135,10 +145,7 @@ async function createUserAccount(e) {
                 spinner.style.visibility = 'hidden';
         }
 
-        setTimeout(() => {
-            window.location.href = `../dashboard`;
-        }, 1000);
-
+       
 
 }
 

@@ -2,6 +2,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
 
 import { getFirestore, collection, addDoc, query, where, getDocs, serverTimestamp,} from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+
+// import emailjs from 'https://cdn.emailjs.com/dist/email.min.js';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -24,10 +26,32 @@ const db = getFirestore(app);
 const colRef = collection(db, "usersData");
 
 
+// // Generate token
+// function generateToken() {
+//   const time = Date.now().toString(36);
+//   const rand = Math.random().toString(36).substring(2, 8);
+//   return `EVT-${time}-${rand}`.toUpperCase();
+// }
 
+// function sendConfirmationEmail(name, email, token) {
+//   emailjs.send("service_p2e48za", "", {
+//     name: name,
+//     email: email,
+//     token: token
+//   })
+//   .then((response) => {
+//     console.log("Email sent:", response.status);
+//     alert("Registration successful! Check your email for your event ID.");
+//   })
+//   .catch((error) => {
+//     console.error("Email error:", error);
+//     alert("Registered, but email failed to send.");
+//   });
+// }
 // Handle form submission
 
-document.getElementById("registrationForm").addEventListener("submit", async function(event) {
+document.getElementById("registrationForm").addEventListener  
+  ("submit", async function(event) {
   event.preventDefault();
 
   const spinner = document.getElementById("spinner");
@@ -42,9 +66,15 @@ document.getElementById("registrationForm").addEventListener("submit", async fun
 
   if (!name || !email || !phone || !eventDate || !eventTime) {
     alert("All fields are required!");
-    spinner.style.visibility = 'visible';
+   
     return;
   }
+
+  
+  // const token = generateToken(); // ✅ Generate the token here
+
+
+  spinner.style.visibility = 'visible';
 
   const registration = {
     name,
@@ -53,8 +83,11 @@ document.getElementById("registrationForm").addEventListener("submit", async fun
     eventType,
     eventDate,
     eventTime,
+    token,
     timestamp: serverTimestamp()
   };
+
+
 
   try {
    

@@ -4,60 +4,7 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
-.reg{
-    padding: 10px;
-    text-align: center;
-}
 
-.container{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    
-}
-
-.form-group input{
-    width: 130%;
-    padding: 10px;
-    margin: 10px;
-}
-
-
-.date{
-    padding: 10px;
-}
-.date input{
-    padding: 10px;
-}
-
-
-.register{
-    padding: 10px;
- 
-}
-
-.register button{
-    width: 50%;
-    padding: 10px 10px;
-    border-radius: 5px;
-    border: none;
-    background-color: #106ebe ;
-    color: white;
-    font-family: sans-serif;
-}
-
-
-.track-btn{
-    padding: 10px;
-}
-
-.track-btn button{
-    padding: 10px 20px;
-    background-color: #106ebe;
-    border: none;
-    color: white;
-    border-radius: 5px;
-}
 
 .spinner-container {
     position: fixed;
@@ -114,4 +61,61 @@ nav .header{
 
 .btn-login{
     padding: 5px;
+}
+
+
+/* hhhhhhhhhhhhhhhhhhhhhhhhhhh */
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f3f4f6;
+}
+
+.form-container {
+    max-width: 500px;
+    margin:10px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+button {
+    background-color:  #106ebe ;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color:  #106dbec9;
+}
+
+@media (max-width: 600px) {
+    .form-container {
+      padding: 20px;
+    }
 }
