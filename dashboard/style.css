@@ -293,7 +293,7 @@ nav .header{
         flex-direction: column;
         justify-content: space-between;
         z-index: 2;
-        border: 2px solid red;
+        /* border: 2px solid red; */
         
     }
   

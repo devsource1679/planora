@@ -6,6 +6,7 @@
 }
 
 
+
 /* header section...................... */
 nav{
     border: thin solid rgba(0, 0, 0, 0.155); 
@@ -877,9 +878,7 @@ input[type="radio"]{
     background-color:#02294a ;
     font-family: sans-serif;
 }
-hr{
-    /* border: thin solid black; */
-}
+
 
 .footer-wrapper{
     display: flex;
