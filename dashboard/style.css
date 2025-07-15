@@ -367,7 +367,9 @@ nav .header{
     text-decoration: none;
     color: white;
     font-family: sans-serif;
-    padding: 15px 15px;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 15px 35px;
     border-radius: 5px;
     background-color: #0ffcbe;
 }
@@ -404,7 +406,7 @@ nav .header{
 .accordion{
     margin: auto;
     width: 95%;
-    max-width: 1250px;
+    /* max-width: 1250px; */
     color: white;
     flex-wrap: wrap;
 }
@@ -469,12 +471,16 @@ input[type="radio"]{
 
 /*  first card section,,,,,,,,,,,,,,,,,,,,,,,,,, */
 .container {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    padding: 20px;
-    max-width: 1237px;
-    margin:  auto;
+   display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: space-around;
+    gap: 50px;
+    /* gap: 100px; */
+    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+    /* grid-template-columns:repeat(3fr) ; */
+    padding: 10px;
+    /* margin:  auto; */
     cursor: pointer;
     width: 95%;
 }
@@ -729,16 +735,16 @@ input[type="radio"]{
 .card p {
     color: #555;
 }
-@media (max-width: 600px) {
+@media (max-width: 650px) {
     .container {
         flex-direction: column;
         align-items: center;
     }
 }
 
-@media (max-width:600px){
+@media (max-width:650px){
     .card{
-        width: 90%;
+        width: 100%;
         height: fit-content;
     }
 }
@@ -763,12 +769,15 @@ input[type="radio"]{
     color: #0ffcbe;
     border-radius: 10px;
     font-family: sans-serif;
+    /* border: 2px solid blue; */
+    
 }
 
 .view{
     text-align: center;
     margin:  25px;
-    /* background-color: red; */
+    padding: 20px 0px 0px;
+   /* border: 2px solid red; */
 }
 .search-wrapper {
             display: flex;
@@ -854,7 +863,7 @@ input[type="radio"]{
 
         .section-footer{
             width: 100%;
-            background-color:#02294a ;
+            background-color:black ;
             font-family: sans-serif;
         }
       
@@ -865,6 +874,17 @@ input[type="radio"]{
             width: 95%;
             margin: auto;
             /* padding: 20px; */
+        }
+
+        .footer-img{
+            background: url(../image/new\ planora\ img.png);
+            height: 50px;
+            width: 50px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            border-radius: 50px;
+
         }
         
         .first-side{
@@ -894,10 +914,11 @@ input[type="radio"]{
         
         @media(max-width:800px){
             .first-side{
-                /* display: block; */
+                display: block;
                 flex-wrap:wrap ;
                 gap: 10px;
-                padding: 10px;
+                padding: 10px 0px;
+                
             }
         }
         
@@ -936,6 +957,10 @@ input[type="radio"]{
         
         .contact-aa{
             color: #fff;
+            display: flex;
+            align-items: center;
+            /* justify-content: space-around; */
+            margin: auto;
         }
         
         .bx-chevrons-up{
@@ -943,22 +968,7 @@ input[type="radio"]{
             color: #0ffcbe !important;
         }
         
-        .circle-wraper{
-            display: flex;
-            align-items: center;
-            margin: auto;
-            padding: 10px 0px;
-            color: white;
-            
-        }
-        
-        .bx{
-            font-size: 40px;
-            font-weight: 100;
-            color: goldenrod;
-            cursor: pointer;
-            text-align: center;
-        }
+      
          
         
         @media(max-width:650px){
